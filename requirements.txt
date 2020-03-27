@@ -9,7 +9,6 @@ chardet==3.0.4
 Click==7.0
 cymem==2.0.2
 decorator==4.4.0
-en-core-web-sm==2.2.0
 Faker==2.0.2
 Flask==1.1.1
 Flask-Cors==3.0.8
@@ -29,7 +28,6 @@ murmurhash==1.0.2
 networkx==2.3
 nltk==3.4.5
 numpy==1.17.2
-pke==1.81
 plac==0.9.6
 preshed==3.0.2
 PyJWT==1.7.1

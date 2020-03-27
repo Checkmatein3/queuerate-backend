@@ -10,6 +10,13 @@
 ## To install dependencies locally
 1) activate your virtual env
 2) run "pip install -r requirements.txt"
+3) install the following dependencies:
+
+* pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
+* python3 -m nltk.downloader stopwords
+* python3 -m nltk.downloader universal_tagset
+* python3 -m spacy download en # download the english model
+* pip install git+https://github.com/boudinfl/pke.git
 
 ## To run application locally
 1) run the command "python run.py"
