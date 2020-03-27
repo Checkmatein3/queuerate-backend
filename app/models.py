@@ -1,7 +1,7 @@
 from app import db
 import enum
 from datetime import datetime
-
+from sqlalchemy import UniqueConstraint
 
 class Base(db.Model):
     """
@@ -46,7 +46,7 @@ class Category(Base):
     """
     __table_name__ = "Category"
 
-    user_id = db.Column(db.String(36), db.ForeignKey('user.uuid'), nullable=False, )
+    user_id = db.Column(db.String(36), db.ForeignKey('user.uuid'), nullable=False, unique=True)
     category_name = db.Column(db.String(50), nullable=False)
     is_archived = db.Column(db.Boolean, default=False)
     forwarding_app = db.Column(db.Enum(ThirdPartyIntegration), default=ThirdPartyIntegration.DEFAULT)
@@ -132,12 +132,13 @@ class User(Base):
     """
     __table_name__ = "User"
 
-    uuid = db.Column(db.String, nullable=False)
+    uuid = db.Column(db.String, nullable=False, unique=True)
     email = db.Column(db.String, nullable=False)
     links = db.relationship('Link', backref='user', lazy='dynamic')
     categories = db.relationship('Category', backref='user', lazy='dynamic')
     forwarding_settings = db.relationship('ForwardingSettings', backref='user', lazy='dynamic')
     default_integration = db.Column(db.Enum(ThirdPartyIntegration))
+    UniqueConstraint(uuid, name='uuid_unique')
 
     @property
     def export_serialization(self):

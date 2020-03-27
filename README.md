@@ -1,14 +1,21 @@
 # QueueRate
 
-## To install dependencies
+## Required Environment Variables
+
+* POSTGRES_URL: The postgres database instance endpoint
+* POSTGRES_USER: The postgres database instance user
+* POSTGRES_PW: The postgres database instance password
+* POSTGRES_DB: The postgres database name in the database instance
+
+## To install dependencies locally
 1) activate your virtual env
 2) run "pip install -r requirements.txt"
 
-## To run application
+## To run application locally
 1) run the command "python run.py"
 2) Application is available on localhost:8080
 
-## To create/run migrations
+## To create/run migrations locally
 
 1) Remove the migrations folder if desired
 2) Make sure you're in your virtualenv
@@ -18,13 +25,13 @@
 
 Most migration problems can be solved by removing the *.db and migrations folder and regenerating them
 
-## To start celery worker
+## To start celery worker for debugging
 1) from the server directory, run:
 "celery -A app.tasks.tasks worker"
 
 This will be run as a daemon for production but doing it this way lets us see the debug printouts for development
 
-## Deployment
+## Manual Deployment
 
 * git pull
 * cd client
