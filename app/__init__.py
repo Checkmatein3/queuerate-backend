@@ -30,15 +30,15 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # silence the depre
 db = SQLAlchemy(application)
 migrate = Migrate(application, db)
 # import models so the migration util will pick them up
-from application import models
+from app import models
 
 # Module imports - for registering blueprints
-from application.category.controllers import category_controller as category_module
-from application.keyword.controllers import keyword_controller as keyword_module
-from application.user.controllers import user_controller as user_module
-from application.forwarding_settings.controllers import fs_controller as fs_module
-from application.link.controllers import link_controller as link_module
-from application.RelevantKeywords.controllers import rk_controller as rk_module
+from app.category.controllers import category_controller as category_module
+from app.keyword.controllers import keyword_controller as keyword_module
+from app.user.controllers import user_controller as user_module
+from app.forwarding_settings.controllers import fs_controller as fs_module
+from app.link.controllers import link_controller as link_module
+from app.RelevantKeywords.controllers import rk_controller as rk_module
 
 main = Blueprint("main", __name__)
 
