@@ -28,6 +28,7 @@ murmurhash==1.0.2
 networkx==2.3
 nltk==3.4.5
 numpy==1.17.2
+pke==1.81
 plac==0.9.6
 preshed==3.0.2
 PyJWT==1.7.1
